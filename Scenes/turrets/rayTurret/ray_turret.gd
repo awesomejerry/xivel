@@ -27,6 +27,7 @@ func attack():
 			can_fire = false
 			ray_enabled = true
 			$RayDuration.start()
+			$Sprite2D.texture = load("res://Assets/turrets/ironman/ironman2.png")
 	else:
 		try_get_closest_target()
 
@@ -45,6 +46,7 @@ func deactivate_ray(ratio):
 func _on_ray_duration_timeout():
 	ray_enabled = false
 	$AttackCooldown.start()
+	$Sprite2D.texture = load("res://Assets/turrets/ironman/ironman1.png")
 
 func _on_attack_cooldown_timeout():
 	can_fire = true
