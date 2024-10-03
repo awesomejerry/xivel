@@ -14,5 +14,7 @@ func attack():
 		Globals.projectilesNode.add_child(projectile)
 		projectile.position = position
 		projectile.target = current_target.position
+		$AnimatedSprite2D.play("attack")
 	else:
 		try_get_closest_target()
+		$AnimatedSprite2D.play("default")
