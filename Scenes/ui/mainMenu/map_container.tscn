@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://v27byrwdrux5"]
 
-[ext_resource type="Texture2D" uid="uid://b8725vkgyjjo8" path="res://Assets/maps/map1.webp" id="1_6vcye"]
 [ext_resource type="Script" path="res://Scenes/ui/mainMenu/map_container.gd" id="1_yc64c"]
+[ext_resource type="Texture2D" uid="uid://bxhr1a1nqoygb" path="res://Assets/maps/map1.png" id="2_ughhi"]
 
 [node name="MapContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(120, 80)
@@ -10,7 +10,7 @@ script = ExtResource("1_yc64c")
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("1_6vcye")
+texture = ExtResource("2_ughhi")
 expand_mode = 5
 stretch_mode = 5
 

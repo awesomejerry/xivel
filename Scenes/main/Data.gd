@@ -154,7 +154,7 @@ const enemies := {
 const maps := {
 	"map1": {
 		"name": "Grass Map",
-		"bg": "res://Assets/maps/map1.webp",
+		"bg": "res://Assets/maps/map1.png",
 		"scene": "res://Scenes/maps/map1.tscn",
 		"baseHp": 10,
 		"startingGold": 100,
