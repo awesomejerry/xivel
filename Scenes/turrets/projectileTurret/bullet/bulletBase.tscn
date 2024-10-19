@@ -12,6 +12,7 @@ script = ExtResource("1_a00cp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+rotation = 1.5708
 sprite_frames = ExtResource("2_otc75")
 autoplay = "default"
 

@@ -15,9 +15,11 @@ var time: float = 1.0
 
 func _process(delta):
 	if target:
-		if not direction: 
-			direction= (target - position).normalized()
+		if not direction:
+			direction = (target - position).normalized()
 		position += direction * speed * delta
+		rotation = direction.angle()
+
 
 func _on_area_2d_area_entered(area):
 	var obj = area.get_parent()
