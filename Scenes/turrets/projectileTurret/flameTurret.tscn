@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjtk42q7qxglj"]
+
+[ext_resource type="Script" path="res://Scenes/turrets/projectileTurret/projectileTurret.gd" id="1_03750"]
+[ext_resource type="Texture2D" uid="uid://83kim8fm0f2s" path="res://Assets/turrets/technoturret.png" id="2_d2ruw"]
+[ext_resource type="Texture2D" uid="uid://dggf3dmt1ujtt" path="res://Assets/turrets/captainmarvel/captainmarvel2.png" id="3_w4s51"]
+[ext_resource type="Texture2D" uid="uid://ddmnxv2v08hnf" path="res://Assets/turrets/captainmarvel/captainmarvel3.png" id="4_uijoo"]
+[ext_resource type="Texture2D" uid="uid://bpnh32h1t5sjy" path="res://Assets/turrets/captainmarvel/captainmarvel1.png" id="5_wfyp2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aicnu"]
+radius = 22.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kae7m"]
+radius = 230.11
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yje0e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_w4s51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uijoo")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wfyp2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Turret" type="Node2D"]
+script = ExtResource("1_03750")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+texture_filter = 1
+texture = ExtResource("2_d2ruw")
+
+[node name="CollisionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+shape = SubResource("CircleShape2D_aicnu")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_kae7m")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_yje0e")
+animation = &"attack"
+autoplay = "default"
+
+[connection signal="input_event" from="CollisionArea" to="." method="_on_collision_area_input_event"]
+[connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
+[connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_area_exited"]
+[connection signal="timeout" from="AttackCooldown" to="." method="attack"]
