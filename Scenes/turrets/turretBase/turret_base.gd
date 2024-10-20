@@ -7,7 +7,7 @@ var turret_type := "":
 	set(value):
 		turret_type = value
 		$Sprite2D.texture = load(Data.turrets[value]["sprite"])
-		$Sprite2D.scale = Vector2(Data.turrets[value]["scale"],Data.turrets[value]["scale"])
+		$Sprite2D.scale = Vector2(Data.turrets[value]["scale"], Data.turrets[value]["scale"])
 		rotates = Data.turrets[value]["rotates"]
 		for stat in Data.turrets[value]["stats"].keys():
 			set(stat, Data.turrets[value]["stats"][stat])
@@ -23,7 +23,7 @@ var current_target = null
 var attack_speed := 1.0:
 	set(value):
 		attack_speed = value
-		$AttackCooldown.wait_time = 1.0/value
+		$AttackCooldown.wait_time = 1.0 / value
 var attack_range := 1.0:
 	set(value):
 		attack_range = value
@@ -37,11 +37,22 @@ func _process(_delta):
 		colliding() if $CollisionArea.has_overlapping_areas() else not_colliding()
 	elif rotates:
 		@warning_ignore("standalone_ternary")
-		look_at(current_target.position) if is_instance_valid(current_target) else try_get_closest_target()
+		# look_at(current_target.position) if is_instance_valid(current_target) else try_get_closest_target()
+		if is_instance_valid(current_target):
+			if current_target.position.x < position.x:
+				$Sprite2D.flip_h = true
+				if $AnimatedSprite2D:
+					$AnimatedSprite2D.flip_h = true
+			else:
+				$Sprite2D.flip_h = false
+				if $AnimatedSprite2D:
+					$AnimatedSprite2D.flip_h = false
+		else:
+			try_get_closest_target()
 
 func _draw():
 	if draw_range:
-		draw_circle(Vector2(0,0), attack_range, "3ccd50a9", false, 1, true)
+		draw_circle(Vector2(0, 0), attack_range, "3ccd50a9", false, 1, true)
 
 func set_placeholder():
 	modulate = Color("6eff297a")
@@ -110,9 +121,9 @@ func upgrade_turret():
 	turret_level += 1
 	for upgrade in Data.turrets[turret_type]["upgrades"].keys():
 		if Data.turrets[turret_type]["upgrades"][upgrade]["multiplies"]:
-			set(upgrade, get(upgrade) * Data.turrets[turret_type]["upgrades"][upgrade]["amount"])
+			set(upgrade, get(upgrade)* Data.turrets[turret_type]["upgrades"][upgrade]["amount"])
 		else:
-			set(upgrade, get(upgrade) + Data.turrets[turret_type]["upgrades"][upgrade]["amount"])
+			set(upgrade, get(upgrade)+ Data.turrets[turret_type]["upgrades"][upgrade]["amount"])
 	turretUpdated.emit()
 
 func attack():
