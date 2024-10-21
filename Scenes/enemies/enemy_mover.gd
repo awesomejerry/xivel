@@ -15,6 +15,8 @@ var baseDamage := 5.0
 var speed := 1.0
 var is_destroyed := false
 
+var last_location = Vector2.ZERO
+
 @onready var spawner := get_parent() as EnemyPath
 func _ready():
 	add_to_group("enemy")
@@ -27,10 +29,12 @@ func _process(_delta):
 			finished_path()
 			return
 		#Flip
-		var angle = int(rotation_degrees) % 360
-		if angle > 180:
-			angle -= 360
-		$Sprite2D.flip_v = abs(angle) > 90
+		$Sprite2D.flip_h = last_location.x > position.x
+		last_location = position
+		# var angle = int(rotation_degrees) % 360
+		# if angle > 180:
+		# 	angle -= 360
+		# $Sprite2D.flip_v = abs(angle) > 90
 
 func finished_path():
 	if is_destroyed:

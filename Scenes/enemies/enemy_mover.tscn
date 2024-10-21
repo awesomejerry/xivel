@@ -29,6 +29,7 @@ _data = {
 radius = 13.0
 
 [node name="EnemyMover" type="PathFollow2D"]
+rotates = false
 loop = false
 script = ExtResource("1_e187i")
 
