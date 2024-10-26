@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://efjbh7i3n3nn"]
+[gd_scene load_steps=4 format=3 uid="uid://efjbh7i3n3nn"]
 
 [ext_resource type="Script" path="res://Scenes/ui/gameOver/game_over_panel.gd" id="1_7egy2"]
+[ext_resource type="AudioStream" uid="uid://b6q4c7e4534n" path="res://Scenes/ui/button_click.wav" id="2_oapfs"]
+[ext_resource type="AudioStream" uid="uid://ch31cut6ymr3b" path="res://Scenes/ui/button_hover.wav" id="3_ejomj"]
 
 [node name="GameOverPanel" type="PanelContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -10,6 +12,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7egy2")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_oapfs")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ejomj")
 
 [node name="CenterPanel" type="PanelContainer" parent="."]
 unique_name_in_owner = true
@@ -40,5 +48,7 @@ text = "Retry"
 layout_mode = 2
 text = "Main Menu"
 
+[connection signal="mouse_entered" from="CenterPanel/VBoxContainer/RetryButton" to="." method="_on_retry_button_mouse_entered"]
 [connection signal="pressed" from="CenterPanel/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="mouse_entered" from="CenterPanel/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_mouse_entered"]
 [connection signal="pressed" from="CenterPanel/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

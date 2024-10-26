@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://duvsvsvu8biwm"]
+[gd_scene load_steps=6 format=3 uid="uid://duvsvsvu8biwm"]
 
 [ext_resource type="Script" path="res://Scenes/ui/mainMenu/main_menu.gd" id="1_lnqmy"]
 [ext_resource type="Texture2D" uid="uid://bp60jt0l2263v" path="res://Assets/menu/bg.png" id="2_jl1fa"]
 [ext_resource type="AudioStream" uid="uid://b245mmxfthp5y" path="res://Scenes/ui/mainMenu/main_menu.mp3" id="3_58un0"]
+[ext_resource type="AudioStream" uid="uid://b6q4c7e4534n" path="res://Scenes/ui/button_click.wav" id="4_why7i"]
+[ext_resource type="AudioStream" uid="uid://ch31cut6ymr3b" path="res://Scenes/ui/button_hover.wav" id="5_niext"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -54,5 +56,13 @@ text = "Quit"
 stream = ExtResource("3_58un0")
 autoplay = true
 
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_why7i")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_niext")
+
+[connection signal="mouse_entered" from="MenuButtons/VBoxContainer/startButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="MenuButtons/VBoxContainer/quitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/quitButton" to="." method="_on_quit_button_pressed"]
