@@ -15,6 +15,7 @@ func attack():
 		projectile.position = position
 		projectile.target = current_target.position
 		$AnimatedSprite2D.play("attack")
+		$Arrow.play()
 	else:
 		try_get_closest_target()
 		$AnimatedSprite2D.play("default")

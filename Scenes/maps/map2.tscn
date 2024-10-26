@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsasxqvr8q0gk"]
+[gd_scene load_steps=8 format=3 uid="uid://bsasxqvr8q0gk"]
 
 [ext_resource type="Script" path="res://Scenes/maps/baseMap.gd" id="1_gpdsc"]
-[ext_resource type="Texture2D" uid="uid://ctm2fgp2u4636" path="res://Assets/maps/map2.png" id="2_4tkgh"]
+[ext_resource type="Texture2D" uid="uid://c8qq3ubm3l730" path="res://Assets/maps/map2.png" id="2_4tkgh"]
+[ext_resource type="AudioStream" uid="uid://bbdw0jf5pb5ao" path="res://Scenes/maps/bgm1.wav" id="2_16kdr"]
 [ext_resource type="Script" path="res://Scenes/maps/EnemySpawner.gd" id="3_1nn7n"]
+[ext_resource type="AudioStream" uid="uid://0cg3j17gyr0h" path="res://Scenes/maps/run_away.wav" id="4_13crd"]
+[ext_resource type="AudioStream" uid="uid://c6ow0kf7s1mrc" path="res://Scenes/maps/lose.wav" id="5_c76go"]
 
 [sub_resource type="Curve2D" id="Curve2D_bs0b4"]
 _data = {
@@ -12,6 +15,9 @@ point_count = 49
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_gpdsc")
+
+[node name="Bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_16kdr")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(3, -2)
@@ -55,6 +61,12 @@ polygon = PackedVector2Array(-316, -204, -316, 22, -270, 14, -256, -19, -251, -6
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Obstacles"]
 position = Vector2(420, -334)
 polygon = PackedVector2Array(-137, 8, -141, 53, -109, 81, -77, 82, -45, 110, -7, 118, -6, 170, -41, 221, -44, 277, -20, 305, -31, 345, -11, 388, -11, 422, 6, 447, -26, 471, -68, 497, -71, 543, -132, 569, -165, 607, -153, 655, 68, 659, 67, 9)
+
+[node name="AudioRunAway" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_13crd")
+
+[node name="AudioLose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_c76go")
 
 [connection signal="timeout" from="PathSpawner/SpawnDelay" to="PathSpawner" method="_on_spawn_delay_timeout"]
 [connection signal="timeout" from="PathSpawner/WaveDelayTimer" to="PathSpawner" method="_on_wave_delay_timer_timeout"]

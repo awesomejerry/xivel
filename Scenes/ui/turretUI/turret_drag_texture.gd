@@ -19,9 +19,13 @@ func _process(_delta):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_grab:
 		if placeholder:
 			placeholder.position = get_global_mouse_position() - get_viewport_rect().size / 2
+			
 		else:
 			position = get_global_mouse_position() + grabbed_offset
+	if Input.is_action_just_pressed("LeftClick") and can_grab:
+		$"../ClickHero".play()
 	if Input.is_action_just_released("LeftClick") and placeholder:
+		$"../PlaceHero".play()
 		check_can_drop()
 
 func _get_drag_data(_at_position):

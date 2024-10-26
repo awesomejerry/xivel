@@ -50,9 +50,11 @@ func get_damage(damage):
 	hp -= damage
 	damage_animation()
 	if hp <= 0:
+		$Dead.play()
 		is_destroyed = true
 		spawner.enemy_destroyed()
 		Globals.currentMap.gold += goldYield
+		await get_tree().create_timer(0.6).timeout
 		queue_free()
 
 func damage_animation():

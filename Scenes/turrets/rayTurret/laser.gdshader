@@ -23,18 +23,18 @@ void fragment() {
 	vec2 stretched_UV = UV;
 	stretched_UV.x *= xStretch;
 	stretched_UV.y *= yStretch;
-	
+
 	float intensity1 = textureLod(NOISE_PATTERN1, stretched_UV + TIME * scroll1 * speed, 0.0).r;
 	float intensity2 = textureLod(NOISE_PATTERN2, stretched_UV + TIME * scroll2 * speed, 0.0).r;
 	float intensity = intensity1 * intensity2;
-	
+
 	float centrality = (1.0 - abs(UV.y - 0.5)) * 0.5;
-	
+
 	if (wobbliness * intensity + (1.0 - wobbliness) * centrality > 1.0 - laserSize)
 	{
 		intensity *= centrality;
 		COLOR = mix(color1, color2, clamp(intensity * colorMixFactor, 0.0, 1.0)) * glowFactor;
-		
+
 		float alpha = textureLod(TRANSPARENCY_VARIATION, stretched_UV + TIME * scroll1 * speed, 0.0).r;
 		COLOR.a = minAlpha + alpha * (1.0 - minAlpha);
 	}

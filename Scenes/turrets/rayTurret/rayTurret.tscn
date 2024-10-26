@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://bpnr2j3gxucn"]
+[gd_scene load_steps=17 format=3 uid="uid://bpnr2j3gxucn"]
 
 [ext_resource type="Script" path="res://Scenes/turrets/rayTurret/ray_turret.gd" id="1_bpos3"]
-[ext_resource type="Texture2D" uid="uid://83kim8fm0f2s" path="res://Assets/turrets/technoturret.png" id="2_45tcr"]
+[ext_resource type="Texture2D" uid="uid://cqmb8t78l8a3t" path="res://Assets/turrets/technoturret.png" id="2_45tcr"]
 [ext_resource type="Shader" path="res://Scenes/turrets/rayTurret/laser.gdshader" id="3_qc2r3"]
-[ext_resource type="Texture2D" uid="uid://dr0ndem12yexg" path="res://Assets/bullets/Pixel.png" id="4_fjepc"]
+[ext_resource type="Texture2D" uid="uid://cbr568jyh8oq7" path="res://Assets/bullets/Pixel.png" id="4_fjepc"]
+[ext_resource type="AudioStream" uid="uid://d3hg2u5fw6cvo" path="res://Scenes/turrets/rayTurret/laser.wav" id="5_la2nw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aicnu"]
 radius = 22.8
@@ -103,6 +104,9 @@ one_shot = true
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="Laser" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_la2nw")
 
 [connection signal="input_event" from="CollisionArea" to="." method="_on_collision_area_input_event"]
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]

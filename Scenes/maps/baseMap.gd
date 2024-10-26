@@ -20,13 +20,17 @@ func _ready():
 	Globals.turretsNode = $Turrets
 	Globals.projectilesNode = $Projectiles
 	Globals.currentMap = self
-
+	$Bgm.play()
 func get_base_damage(damage):
 	if gameOver:
 		return
 	baseHP -= damage
+	if !$AudioRunAway.playing:
+		$AudioRunAway.play()
 	Globals.baseHpChanged.emit(baseHP, baseMaxHp)
 	if baseHP <= 0:
+		$Bgm.stop()
+		$AudioLose.play()
 		gameOver = true
 		var gameOverPanelScene := preload("res://Scenes/ui/gameOver/game_over_panel.tscn")
 		var gameOverPanel := gameOverPanelScene.instantiate()

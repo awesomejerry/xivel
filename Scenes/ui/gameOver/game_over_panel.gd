@@ -11,8 +11,19 @@ func animate_appear():
 	tween.tween_property($CenterPanel, "scale", Vector2(1,1), 0.5)
 
 func _on_retry_button_pressed():
+	$ButtonClick.play()
 	Globals.restart_current_level()
 	queue_free()
+	
+
 
 func _on_main_menu_button_pressed():
+	$ButtonClick.play()
 	get_tree().change_scene_to_file("res://Scenes/ui/mainMenu/mainMenu.tscn")
+
+
+func _on_retry_button_mouse_entered() -> void:
+	$ButtonHover.play()
+
+func _on_main_menu_button_mouse_entered() -> void:
+	$ButtonHover.play()

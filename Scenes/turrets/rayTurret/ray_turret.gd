@@ -18,6 +18,7 @@ func _process(delta):
 
 func attack():
 	if not $RayDuration.is_stopped():
+		$Laser.play()
 		for a in $HitArea.get_overlapping_areas():
 			var collider = a.get_parent()
 			if collider.is_in_group("enemy"):
