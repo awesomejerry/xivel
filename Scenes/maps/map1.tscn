@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceo44f3u14hlm"]
+[gd_scene load_steps=8 format=3 uid="uid://ceo44f3u14hlm"]
 
 [ext_resource type="Script" path="res://Scenes/maps/baseMap.gd" id="1_k8s62"]
 [ext_resource type="Texture2D" uid="uid://ce3fnmjqpc7f3" path="res://Assets/maps/map1.png" id="1_p0w4w"]
 [ext_resource type="Script" path="res://Scenes/maps/EnemySpawner.gd" id="2_351sa"]
+[ext_resource type="AudioStream" uid="uid://0cg3j17gyr0h" path="res://Scenes/maps/run_away.wav" id="4_fwo7u"]
+[ext_resource type="AudioStream" uid="uid://c6ow0kf7s1mrc" path="res://Scenes/maps/lose.wav" id="5_kg1op"]
+[ext_resource type="AudioStream" uid="uid://bbdw0jf5pb5ao" path="res://Scenes/maps/bgm1.wav" id="6_bsqbq"]
 
 [sub_resource type="Curve2D" id="Curve2D_bs0b4"]
 _data = {
@@ -41,6 +44,17 @@ collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles"]
 polygon = PackedVector2Array(-580, -84, -216, -84, -209, -201, -92, -191, -9, -196, 27, -191, 19, -50, -35, -32, -166, -34, -168, -79, -36, -85, -33, -129, -80, -132, -161, -134, -170, -80, -166, -33, -163, 21, 109, 24, 130, -141, 311, -140, 298, 185, -20, 193, -39, 372, -104, 372, -73, 123, 229, 123, 241, -68, 198, -70, 196, 92, -140, 102, -148, 223, -206, 223, -347, 216, -404, 221, -399, 28, -361, 34, -212, 31, -211, 87, -356, 84, -325, 163, -208, 160, -216, -29, -579, -35)
+
+[node name="AudioRunAway" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fwo7u")
+
+[node name="AudioLose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_kg1op")
+
+[node name="AudioBGM" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bsqbq")
 
 [connection signal="timeout" from="PathSpawner/SpawnDelay" to="PathSpawner" method="_on_spawn_delay_timeout"]
 [connection signal="timeout" from="PathSpawner/WaveDelayTimer" to="PathSpawner" method="_on_wave_delay_timer_timeout"]

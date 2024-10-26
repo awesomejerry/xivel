@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://3ap3on04gj27"]
+[gd_scene load_steps=3 format=3 uid="uid://3ap3on04gj27"]
 
 [ext_resource type="Script" path="res://Scenes/ui/mapCompleted/mapCompleted.gd" id="1_r4qa7"]
+[ext_resource type="AudioStream" uid="uid://djoy8k6fmyxs1" path="res://Scenes/ui/mapCompleted/win.wav" id="2_ca881"]
 
 [node name="GameOverPanel" type="PanelContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -39,6 +40,10 @@ text = "Restart"
 [node name="MainMenuButton" type="Button" parent="CenterPanel/VBoxContainer"]
 layout_mode = 2
 text = "Main Menu"
+
+[node name="AudioWin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ca881")
+autoplay = true
 
 [connection signal="pressed" from="CenterPanel/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="CenterPanel/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
