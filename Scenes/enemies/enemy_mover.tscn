@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb3v7e6vydle1"]
+[gd_scene load_steps=7 format=3 uid="uid://cb3v7e6vydle1"]
 
 [ext_resource type="Script" path="res://Scenes/enemies/enemy_mover.gd" id="1_e187i"]
 [ext_resource type="Texture2D" uid="uid://bua535jcseluw" path="res://Assets/enemies/dino1.png" id="2_bpnqn"]
+[ext_resource type="AudioStream" uid="uid://cea2ob2hd78fj" path="res://Scenes/enemies/dead.wav" id="2_dt1a5"]
 
 [sub_resource type="Animation" id="Animation_mhspp"]
 resource_name = "move"
@@ -32,6 +33,9 @@ radius = 13.0
 rotates = false
 loop = false
 script = ExtResource("1_e187i")
+
+[node name="Dead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dt1a5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
