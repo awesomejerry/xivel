@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/ui/hud.gd" id="2_cy82p"]
 [ext_resource type="PackedScene" uid="uid://d0otd33ubv3hq" path="res://Scenes/ui/turretUI/turret_buy_container.tscn" id="3_pljl8"]
 [ext_resource type="Script" path="res://Scenes/ui/turretUI/turrets_panel.gd" id="3_ryupq"]
-[ext_resource type="AudioStream" uid="uid://dasfsaq7era75" path="res://Scenes/main/battle.wav" id="5_j215l"]
+[ext_resource type="AudioStream" uid="uid://bbdw0jf5pb5ao" path="res://Scenes/main/battle.wav" id="5_j215l"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_22s4b")
