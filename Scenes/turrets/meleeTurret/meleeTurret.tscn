@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dbktwv0atytem"]
+[gd_scene load_steps=25 format=3 uid="uid://dbktwv0atytem"]
 
 [ext_resource type="Script" path="res://Scenes/turrets/meleeTurret/melee_turret.gd" id="1_65sy1"]
 [ext_resource type="Texture2D" uid="uid://cqmb8t78l8a3t" path="res://Assets/turrets/technoturret.png" id="2_co0py"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://crftcvy06qytm" path="res://Assets/turrets/hulk/hulk-attack9.png" id="17_l3nyo"]
 [ext_resource type="Texture2D" uid="uid://dw4tlom65l1qh" path="res://Assets/turrets/hulk/hulk-attack10.png" id="18_ox1sb"]
 [ext_resource type="Texture2D" uid="uid://bdw6wij2l51n4" path="res://Assets/turrets/hulk/hulk-attack11.png" id="19_3h01v"]
+[ext_resource type="AudioStream" uid="uid://cxfs8mycyo6ck" path="res://Scenes/turrets/meleeTurret/earth.wav" id="20_ssh5b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ds6ah"]
 animations = [{
@@ -141,6 +142,9 @@ position = Vector2(7.62939e-06, -19)
 scale = Vector2(6.09375, 6.09375)
 sprite_frames = SubResource("SpriteFrames_hbwss")
 frame_progress = 1.0
+
+[node name="Earth" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_ssh5b")
 
 [connection signal="input_event" from="CollisionArea" to="." method="_on_collision_area_input_event"]
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]

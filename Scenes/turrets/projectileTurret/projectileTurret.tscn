@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://edmi5jtva5y2"]
+[gd_scene load_steps=11 format=3 uid="uid://edmi5jtva5y2"]
 
 [ext_resource type="Script" path="res://Scenes/turrets/projectileTurret/projectileTurret.gd" id="1_7ca8v"]
-[ext_resource type="Texture2D" uid="uid://83kim8fm0f2s" path="res://Assets/turrets/technoturret.png" id="2_2x7ix"]
-[ext_resource type="Texture2D" uid="uid://bf22ax8bqdfwk" path="res://Assets/turrets/hawkeye/turret-hawkeye-attack1.png" id="3_ute6r"]
-[ext_resource type="Texture2D" uid="uid://c2nmwaosmn5fd" path="res://Assets/turrets/hawkeye/turret-hawkeye-attack2.png" id="4_w22de"]
-[ext_resource type="Texture2D" uid="uid://duahbyv2xv3r6" path="res://Assets/turrets/hawkeye/turret-hawkeye1.png" id="6_llo6u"]
-[ext_resource type="Texture2D" uid="uid://d4bb2olt51fd6" path="res://Assets/turrets/hawkeye/turret-hawkeye2.png" id="7_t56uh"]
+[ext_resource type="Texture2D" uid="uid://cqmb8t78l8a3t" path="res://Assets/turrets/technoturret.png" id="2_2x7ix"]
+[ext_resource type="AudioStream" uid="uid://cwe38u3s6bjr7" path="res://Scenes/turrets/projectileTurret/arrow.wav" id="3_6lq2x"]
+[ext_resource type="Texture2D" uid="uid://bpqk5lyvou7gi" path="res://Assets/turrets/hawkeye/turret-hawkeye-attack1.png" id="3_ute6r"]
+[ext_resource type="Texture2D" uid="uid://dtlqwvujnrjf3" path="res://Assets/turrets/hawkeye/turret-hawkeye-attack2.png" id="4_w22de"]
+[ext_resource type="Texture2D" uid="uid://b0pqgu2yyfnwu" path="res://Assets/turrets/hawkeye/turret-hawkeye1.png" id="6_llo6u"]
+[ext_resource type="Texture2D" uid="uid://4u60sj7obsu3" path="res://Assets/turrets/hawkeye/turret-hawkeye2.png" id="7_t56uh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aicnu"]
 radius = 22.8
@@ -46,6 +47,9 @@ visible = false
 z_index = 2
 texture_filter = 1
 texture = ExtResource("2_2x7ix")
+
+[node name="Arrow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6lq2x")
 
 [node name="CollisionArea" type="Area2D" parent="."]
 collision_layer = 2

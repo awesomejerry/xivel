@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjtk42q7qxglj"]
+[gd_scene load_steps=10 format=3 uid="uid://cjtk42q7qxglj"]
 
 [ext_resource type="Script" path="res://Scenes/turrets/projectileTurret/projectileTurret.gd" id="1_03750"]
-[ext_resource type="Texture2D" uid="uid://83kim8fm0f2s" path="res://Assets/turrets/technoturret.png" id="2_d2ruw"]
-[ext_resource type="Texture2D" uid="uid://dggf3dmt1ujtt" path="res://Assets/turrets/captainmarvel/captainmarvel2.png" id="3_w4s51"]
-[ext_resource type="Texture2D" uid="uid://ddmnxv2v08hnf" path="res://Assets/turrets/captainmarvel/captainmarvel3.png" id="4_uijoo"]
-[ext_resource type="Texture2D" uid="uid://bpnh32h1t5sjy" path="res://Assets/turrets/captainmarvel/captainmarvel1.png" id="5_wfyp2"]
+[ext_resource type="Texture2D" uid="uid://cqmb8t78l8a3t" path="res://Assets/turrets/technoturret.png" id="2_d2ruw"]
+[ext_resource type="AudioStream" uid="uid://dt0drk32mhliq" path="res://Scenes/turrets/projectileTurret/fire.wav" id="3_aptt5"]
+[ext_resource type="Texture2D" uid="uid://db6skbu5k4dsb" path="res://Assets/turrets/captainmarvel/captainmarvel2.png" id="3_w4s51"]
+[ext_resource type="Texture2D" uid="uid://ctmg4y8ex13i2" path="res://Assets/turrets/captainmarvel/captainmarvel3.png" id="4_uijoo"]
+[ext_resource type="Texture2D" uid="uid://b824b0nwj3fib" path="res://Assets/turrets/captainmarvel/captainmarvel1.png" id="5_wfyp2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aicnu"]
 radius = 22.8
@@ -42,6 +43,9 @@ visible = false
 z_index = 2
 texture_filter = 1
 texture = ExtResource("2_d2ruw")
+
+[node name="Arrow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_aptt5")
 
 [node name="CollisionArea" type="Area2D" parent="."]
 collision_layer = 2
