@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0otd33ubv3hq"]
+[gd_scene load_steps=5 format=3 uid="uid://d0otd33ubv3hq"]
 
 [ext_resource type="Script" path="res://Scenes/ui/turretUI/turret_buy_container.gd" id="1_7686v"]
 [ext_resource type="Script" path="res://Scenes/ui/turretUI/turret_drag_texture.gd" id="2_8yuvs"]
+[ext_resource type="AudioStream" uid="uid://dg2044vglnnym" path="res://Scenes/ui/turretUI/click_hero.wav" id="3_yt5k2"]
+[ext_resource type="AudioStream" uid="uid://bsdh1xoi0vos2" path="res://Scenes/ui/turretUI/place_hero.wav" id="4_s0lvy"]
 
 [node name="TurretBuyContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(64, 64)
@@ -26,3 +28,9 @@ size_flags_vertical = 8
 text = "31"
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="ClickHero" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yt5k2")
+
+[node name="PlaceHero" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_s0lvy")
