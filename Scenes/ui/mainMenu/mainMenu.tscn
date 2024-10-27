@@ -1,10 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://duvsvsvu8biwm"]
 
 [ext_resource type="Script" path="res://Scenes/ui/mainMenu/main_menu.gd" id="1_lnqmy"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://bp60jt0l2263v" path="res://Assets/menu/bg.png" id="2_jl1fa"]
 [ext_resource type="AudioStream" uid="uid://b245mmxfthp5y" path="res://Scenes/ui/mainMenu/main_menu.mp3" id="3_58un0"]
 [ext_resource type="AudioStream" uid="uid://b6q4c7e4534n" path="res://Scenes/ui/button_click.wav" id="4_why7i"]
 [ext_resource type="AudioStream" uid="uid://ch31cut6ymr3b" path="res://Scenes/ui/button_hover.wav" id="5_niext"]
+=======
+[ext_resource type="Texture2D" uid="uid://dqm6vnjtnccog" path="res://Assets/menu/bg.jpg" id="2_kxh0j"]
+[ext_resource type="AudioStream" uid="uid://dddf3hd2y8sew" path="res://Scenes/ui/mainMenu/main_menu.mp3" id="3_58un0"]
+>>>>>>> Stashed changes
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -23,7 +28,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_jl1fa")
+texture = ExtResource("2_kxh0j")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="MenuButtons" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(200, 150)
