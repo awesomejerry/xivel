@@ -25,8 +25,8 @@ const turrets := {
 	},
 	"laser": {
 		"stats": {
-			"damage": 0.5,
-			"attack_speed": 20.0,
+			"damage": 1.0,
+			"attack_speed": 10.0,
 			"attack_range": 250.0,
 			"bulletSpeed": 400.0,
 			"bulletPierce": 4,

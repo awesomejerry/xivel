@@ -1,8 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://djv5uvpfktdlq"]
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://djv5uvpfktdlq"]
 
 [ext_resource type="Texture2D" uid="uid://c35fyh1ivfcsh" path="res://Assets/bullets/energy1.png" id="1_32npw"]
 [ext_resource type="Texture2D" uid="uid://brvn7cec63nu4" path="res://Assets/bullets/energy2.png" id="2_gi1ij"]
-[ext_resource type="Texture2D" uid="uid://cukbkoudv7li2" path="res://Assets/bullets/energy3.png" id="3_rnjjn"]
 
 [resource]
 animations = [{
@@ -12,9 +11,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_gi1ij")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_rnjjn")
 }],
 "loop": true,
 "name": &"default",
