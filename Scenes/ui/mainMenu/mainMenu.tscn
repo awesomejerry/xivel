@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://duvsvsvu8biwm"]
 
 [ext_resource type="Script" path="res://Scenes/ui/mainMenu/main_menu.gd" id="1_lnqmy"]
-[ext_resource type="Texture2D" uid="uid://cde2r78iwu540" path="res://Assets/menu/bg.jpg" id="2_kxh0j"]
-[ext_resource type="AudioStream" uid="uid://blnpldm36uhgi" path="res://Scenes/ui/mainMenu/main_menu.mp3" id="3_58un0"]
-[ext_resource type="AudioStream" uid="uid://bsgwcupwvqw20" path="res://Scenes/ui/button_click.wav" id="4_why7i"]
-[ext_resource type="AudioStream" uid="uid://dyh02trs5i7kn" path="res://Scenes/ui/button_hover.wav" id="5_niext"]
+[ext_resource type="Texture2D" uid="uid://dqm6vnjtnccog" path="res://Assets/menu/bg.jpg" id="2_kxh0j"]
+[ext_resource type="AudioStream" uid="uid://dddf3hd2y8sew" path="res://Scenes/ui/mainMenu/main_menu.mp3" id="3_58un0"]
+[ext_resource type="AudioStream" uid="uid://dd0r58g6juusx" path="res://Scenes/ui/button_click.wav" id="4_why7i"]
+[ext_resource type="AudioStream" uid="uid://bmif647trnf8x" path="res://Scenes/ui/button_hover.wav" id="5_niext"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
