@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://ceo44f3u14hlm"]
 
 [ext_resource type="Script" path="res://Scenes/maps/baseMap.gd" id="1_k8s62"]
-[ext_resource type="Texture2D" uid="uid://ce3fnmjqpc7f3" path="res://Assets/maps/map1.png" id="1_p0w4w"]
+[ext_resource type="Texture2D" uid="uid://bgxl0cwl74kqe" path="res://Assets/maps/map1.png" id="1_p0w4w"]
 [ext_resource type="Script" path="res://Scenes/maps/EnemySpawner.gd" id="2_351sa"]
-[ext_resource type="AudioStream" uid="uid://0cg3j17gyr0h" path="res://Scenes/maps/run_away.wav" id="4_fwo7u"]
-[ext_resource type="AudioStream" uid="uid://c6ow0kf7s1mrc" path="res://Scenes/maps/lose.wav" id="5_kg1op"]
-[ext_resource type="AudioStream" uid="uid://bbdw0jf5pb5ao" path="res://Scenes/maps/bgm1.wav" id="6_bsqbq"]
+[ext_resource type="AudioStream" uid="uid://drjaqsi0jwy6w" path="res://Scenes/maps/run_away.wav" id="4_fwo7u"]
+[ext_resource type="AudioStream" uid="uid://di0v4yi8hgn57" path="res://Scenes/maps/lose.wav" id="5_kg1op"]
+[ext_resource type="AudioStream" uid="uid://cde8i0bvf1u16" path="res://Scenes/maps/bgm1.wav" id="6_bsqbq"]
 
 [sub_resource type="Curve2D" id="Curve2D_bs0b4"]
 _data = {
